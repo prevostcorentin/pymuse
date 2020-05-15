@@ -1,0 +1,10 @@
+*.pyc
+*.wp*
+__pycache__
+.cache
+*.pyc
+**/*.pyc
+build/
+dist/
+pymuse.egg-info
+venv/
