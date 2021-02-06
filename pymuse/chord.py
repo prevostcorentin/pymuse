@@ -1,10 +1,9 @@
-""" Class that represents a Note """
+""" Class that represents a Scale"""
 
 from .note import Note
 from .scale import Scale
 from .notation import *
 
-from functools import reduce
 
 class Chord(Scale):
 
@@ -25,7 +24,22 @@ class Chord(Scale):
 
     def __repr__(self):
         representation = [Note(pitch) for pitch in self[:]]
-        return representation
+        return str(representation)
 
     def __str__(self):
-        return Note(self[0]).notation
+        notation = Note(self[0]).notation
+        if self.is_major:
+            notation = notation + ' M'
+        else:
+            notation = notation + ' m'
+        return notation
+
+    @property
+    def is_major(self):
+        first_note = self.__getitem__(0)
+        for remaining_note in self[1:]:
+            if remaining_note - first_note == 4:
+                return True
+            elif remaining_note - first_note == 3:
+                return False
+        return False

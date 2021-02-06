@@ -22,8 +22,19 @@ def test_c_ionian_perfect_superior_octave():
     assert chord[:] == [12, 16, 19]
     assert len(chord[:]) == 3
 
+def test_is_major():
+    c_major = Chord(Scale(0), definition=[I, III, V])
+    assert c_major.is_major
+
+def test_is_minor():
+    d_minor = Chord(Scale(0), definition=[II, IV, VI])
+    assert not d_minor.is_major
+
 def test_c_major_notation():
-    assert str(Chord(Scale(0), definition=[I, III, V])) == "CM"
+    assert str(Chord(Scale(0), definition=[I, III, V])) == "C M"
+
+def test_d_minor_notation():
+    assert str(Chord(Scale(0), definition=[II, IV, VI])) == "D m"
 
 def test_d_sharp_myxolydian_notation():
     assert str(Chord(Scale(4), definition=[V, VII, IX, XII])) == "D# 7"

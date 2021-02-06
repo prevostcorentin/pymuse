@@ -8,3 +8,5 @@ build/
 dist/
 pymuse.egg-info
 venv/
+.vs/
+TestResults/
