@@ -1,6 +1,6 @@
 # Pymuse
 
-Library for musical theory analysis
+Musical theory analysis library.
 
 ## Getting Started
 
@@ -46,7 +46,7 @@ A
 B
 ```
 
-## Running the tests
+## Test
 
 ```
 [~/projects/pymuse]$ make test
